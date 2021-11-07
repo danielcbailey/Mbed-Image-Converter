@@ -2,7 +2,7 @@
 Convert images to C files for ECE 2035 Project 2-2.
 
 ### Usage
-You are intended to compile the code yourself on your target platform. It should compile for any platform. Simply download the source code and run the following command from a terminal with access to GCC: `gcc main.c stb_image.h -o imgconv -lm`.
+You are intended to compile the code yourself on your target platform. It should compile for any platform. Simply download the source code and run the following command from a terminal with access to GCC from the source code's directory: `gcc main.c stb_image.h -o imgconv -lm`.
 
 After you have compiled the code, place the binary in the directory you have your images stored. The software will accept almost any image format you provide, but do not use GIFs, JPEGs with 12-bit channels, or JPEGs with arithmetic coding.
 
