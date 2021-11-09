@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 	fprintf(file, "#include <stdint.h>\n\n");
 	fprintf(file, "#define IMAGE_%s_WIDTH %d\n", argv[2], x);
 	fprintf(file, "#define IMAGE_%s_HEIGHT %d\n\n", argv[2], y);
-	fprintf(file, "const uint32_t %s[%d] = [\n\t", argv[2], x * y);
+	fprintf(file, "const uint32_t %s_arr[%d] = {\n\t", argv[2], x * y);
 
 	int lineLength = 0;
 	for (int i = 0; x * y * 3 > i; i += 3) {
@@ -46,7 +46,8 @@ int main(int argc, char *argv[]) {
 		lineLength += fprintf(file, "%d", pixel);
 	}
 
-	fprintf(file, "];\n");
+	fprintf(file, "};\n\n");
+	fprintf(file, "const int* %s = (int*)%s_arr;", argv[2], argv[2]);
 
 	STBI_FREE(data);
 	fclose(file);
